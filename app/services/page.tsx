@@ -35,15 +35,17 @@ const CORE_SERVICES: ServiceItem[] = [
         description: "Modern web applications that combine cutting-edge technology with timeless engineering principles. We use AI-assisted development to accelerate prototyping and traditional coding expertise to ensure production quality.",
         whatWeBuild: [
             "Custom SaaS platforms",
+            "Native mobile applications (React Native for iOS & Android)",
+            "Progressive Web Apps (PWAs) with offline capabilities",
             "Enterprise dashboards and tools",
             "API-first applications",
-            "Progressive web apps (PWAs)",
             "Real-time collaborative tools",
             "Complex data visualization platforms"
         ],
         techStack: {
-            "Frontend": "React, Next.js, modern JavaScript",
+            "Frontend": "React, Next.js, React Native, modern JavaScript",
             "Backend": "Node.js, Python, serverless architectures",
+            "Mobile": "React Native, Expo, native modules",
             "Databases": "PostgreSQL, MongoDB, Redis",
             "Cloud": "AWS, Vercel, custom infrastructure"
         },

@@ -70,6 +70,8 @@ export const SERVICES: Service[] = [
     features: [
       "Custom platforms",
       "SaaS products",
+      "Mobile apps (React Native - iOS & Android)",
+      "Progressive Web Apps (PWAs)",
       "Enterprise dashboards",
       "Complex web applications"
     ],

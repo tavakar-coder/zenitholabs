@@ -51,6 +51,21 @@ const FAQ_DATA: FAQCategory[] = [
                 id: "ai-7",
                 question: "Can you help refine our AI product idea before building?",
                 answer: "Absolutely. We offer a 'Product Vision Analysis' phase where we validate your idea, assess technical feasibility, and help you define the MVP features to ensure market fit."
+            },
+            {
+                id: "ai-8",
+                question: "Do you build mobile apps for iOS and Android?",
+                answer: "Yes, we build cross-platform mobile applications using React Native, allowing us to deploy to both iOS and Android from a single codebase. This approach reduces development time and cost while maintaining native performance and user experience."
+            },
+            {
+                id: "ai-9",
+                question: "What is a Progressive Web App (PWA) and should I build one?",
+                answer: "A PWA is a web application that works like a native app, offering offline capabilities, push notifications, and home screen installation. PWAs are perfect if you want app-like features without the complexity of app store submissions. They work across all devices and are more cost-effective than building separate native apps."
+            },
+            {
+                id: "ai-10",
+                question: "Can you convert my existing web app into a mobile app?",
+                answer: "Yes, we can transform your existing web application into a React Native mobile app or a PWA. We'll assess your current architecture and recommend the best approach based on your features, budget, and target audience."
             }
         ]
     },
@@ -301,9 +316,6 @@ export default function FAQPage() {
         <div className="min-h-screen bg-white pt-10 pb-8">
             {/* Header Section */}
             <div className="px-4 max-w-7xl mx-auto mb-6 text-center">
-                <span className="text-blue-600 font-bold tracking-wider uppercase text-sm border-2 border-blue-100 rounded-full px-4 py-1.5 bg-blue-50 mb-2 inline-block">
-                    // frequently asked questions
-                </span>
                 <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">FAQs</h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Got questions? We have got answers. If you do not find what you are looking for, feel free to reach out.
@@ -327,7 +339,6 @@ export default function FAQPage() {
                 {filteredFAQs.map((category, catIndex) => (
                     <div key={catIndex}>
                         <div className="mb-6">
-                            <span className="text-gray-400 text-sm font-medium mb-1 block">// category {catIndex + 1}</span>
                             <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
                         </div>
 
