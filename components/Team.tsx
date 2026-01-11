@@ -17,7 +17,7 @@ const Team: React.FC = () => {
     const teamMembers: TeamMember[] = [
         {
             name: "Marshal Tavakar",
-            role: "Product Manager",
+            role: "Director of Product",
             experience: "10+",
             image: "/team/marshal-tavakar.png",
             linkedin: "https://www.linkedin.com/in/marshal-tavakar/"
@@ -44,10 +44,11 @@ const Team: React.FC = () => {
             linkedin: "https://www.linkedin.com/in/tanvi-gupta-44398a192/"
         },
         {
-            name: "Ravi",
+            name: "Ravee Chaudhary",
             role: "Senior Data Scientist",
             experience: "12+",
-            image: "/team/ravi.png"
+            image: "/team/ravi.png",
+            linkedin: "https://www.linkedin.com/in/ravee-chaudhary/"
         }
     ];
 
