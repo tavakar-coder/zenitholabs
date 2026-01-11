@@ -1,7 +1,5 @@
 'use client';
 
-export const dynamic = 'force-dynamic';
-
 import React from 'react';
 import { Mail, Phone, Clock, MapPin, ArrowRight, Loader2 } from 'lucide-react';
 import { useFormState, useFormStatus } from 'react-dom';
