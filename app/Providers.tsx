@@ -9,10 +9,12 @@ if (typeof window !== 'undefined') {
 
     posthog.init(POSTHOG_KEY, {
         api_host: POSTHOG_HOST,
-        defaults: '2025-11-30',
         person_profiles: 'identified_only',
         capture_pageview: false,
-        disable_session_recording: isLocalhost
+        disable_session_recording: isLocalhost,
+        loaded: (posthog) => {
+            if (process.env.NODE_ENV === 'development') console.log('PostHog loaded')
+        }
     })
 }
 
