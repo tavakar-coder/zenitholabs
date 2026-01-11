@@ -65,7 +65,7 @@ export const SERVICES: Service[] = [
   {
     id: 1,
     icon: Laptop,
-    title: "Web Development",
+    title: "Custom AI Development",
     description: "Modern, fast, and scalable web applications built with cutting-edge technology. We blend AI-assisted development with traditional coding excellence to deliver products that perform beautifully and scale effortlessly.",
     features: [
       "Custom platforms",
@@ -73,7 +73,7 @@ export const SERVICES: Service[] = [
       "Enterprise dashboards",
       "Complex web applications"
     ],
-    ctaText: "Explore Web Dev"
+    ctaText: "Explore Custom AI"
   },
   {
     id: 2,
@@ -289,7 +289,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "berryflow-io",
     client: "BerryFlow.io",
     industry: "SaaS & Marketing Technology",
-    services: ["Web Development", "AI Integration", "Growth Strategy"],
+    services: ["Custom AI Development", "AI Integration", "Growth Strategy"],
     challenge: "Marketers needed to move faster with content creation.",
     solution: "End-to-end content automation platform with intelligent workflows, document libraries, and creative tools.",
     results: [
@@ -464,7 +464,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "the-decorating-varanasi",
     client: "The Decorating Varanasi",
     industry: "Event Management",
-    services: ["Web Development", "AI Automation", "Event Tech"],
+    services: ["Custom AI Development", "AI Automation", "Event Tech"],
     challenge: "Organizing events efficiently required a dual-interface system for both admins and users.",
     solution: "A dynamic Event Management website built and deployed in just 1 Day using AI, featuring real-time updates and a robust admin panel.",
     results: [
@@ -508,7 +508,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "nixet",
     client: "Nixet",
     industry: "Digital Product Agency",
-    services: ["Web Development", "Product Strategy", "Blockchain", "UI/UX"],
+    services: ["Custom AI Development", "Product Strategy", "Blockchain", "UI/UX"],
     challenge: "Businesses need to build and scale digital products with speed and clarity.",
     solution: "A partnership-driven approach providing product design, development, and blockchain integration to scale digital solutions.",
     results: [
@@ -552,7 +552,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "vinayka-rugs",
     client: "Vinayka Rugs [WIP]",
     industry: "Luxury E-commerce & Textiles",
-    services: ["Web Development", "E-commerce", "Bespoke Solutions", "UI/UX Design"],
+    services: ["Custom AI Development", "E-commerce", "Bespoke Solutions", "UI/UX Design"],
     challenge: "Preserving ancient hand-knotting traditions while reaching modern, luxury consumers globally through a digital storefront.",
     solution: "A premium React-based e-commerce platform that tells the brand's story of ethical craftsmanship and sustainable luxury while offering a seamless shopping experience.",
     results: [

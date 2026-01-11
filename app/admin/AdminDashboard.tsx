@@ -46,14 +46,14 @@ function formatShortDate(date: Date) {
 
 function getInterestLabel(interest: string | null) {
     const labels: Record<string, string> = {
-        'web-dev': 'Web Development',
+        'web-dev': 'Custom AI Development',
         'shopify': 'Shopify Dev',
         'ai-automation': 'AI Automation',
         'documentation': 'Documentation',
         'profitability': 'Profitability',
         'growth': 'Growth & Mktg',
         'other': 'Other',
-        'Web Development': 'Web Development',
+        'Web Development': 'Custom AI Development',
         'AI Automation': 'AI Automation',
         'Full Transformation': 'Transformation',
         'Other': 'Other',
