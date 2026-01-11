@@ -139,6 +139,58 @@ export const SERVICES: Service[] = [
       "Scaling strategies"
     ],
     ctaText: "Boost Growth"
+  },
+  {
+    id: 7,
+    icon: BarChart,
+    title: "Power BI Dashboards",
+    description: "Transform your raw data into interactive, visual insights. We build custom Power BI dashboards that help you track KPIs, identify trends, and make data-driven decisions.",
+    features: [
+      "Real-time data visualization",
+      "Custom KPI tracking",
+      "Automated reporting",
+      "Interactive drill-downs"
+    ],
+    ctaText: "Visualize Data"
+  },
+  {
+    id: 8,
+    icon: LineChart,
+    title: "Reporting Dashboards",
+    description: "Automated reporting solutions that save you time. We design comprehensive dashboards that consolidate data from multiple sources into clear, actionable reports.",
+    features: [
+      "Automated data aggregation",
+      "Custom report generation",
+      "Multi-source integration",
+      "Scheduled delivery"
+    ],
+    ctaText: "Automate Reports"
+  },
+  {
+    id: 9,
+    icon: Layers,
+    title: "Company Dashboards",
+    description: "Centralize your company's metrics in one place. We create unified dashboards that provide a holistic view of your business performance across all departments.",
+    features: [
+      "Executive summaries",
+      "Departmental metrics",
+      "Goal tracking",
+      "Performance scorecards"
+    ],
+    ctaText: "Unify Metrics"
+  },
+  {
+    id: 10,
+    icon: MonitorX,
+    title: "Monitoring Integrations",
+    description: "Keep a pulse on your systems with robust monitoring integrations. We set up alerts and dashboards to ensure your critical infrastructure and applications are always running smoothly.",
+    features: [
+      "System uptime monitoring",
+      "Performance alerts",
+      "Log analysis",
+      "Incident response integration"
+    ],
+    ctaText: "Monitor Systems"
   }
 ];
 

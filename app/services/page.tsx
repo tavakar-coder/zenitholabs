@@ -28,7 +28,7 @@ interface ServiceItem {
     timeline?: string;
 }
 
-const SERVICES_DATA: ServiceItem[] = [
+const CORE_SERVICES: ServiceItem[] = [
     {
         title: "Custom AI Development",
         headline: "Build Fast. Scale Faster.",
@@ -82,13 +82,13 @@ const SERVICES_DATA: ServiceItem[] = [
         headline: "Work Smarter with Intelligent Automation",
         description: "Custom AI agents that handle the repetitive work so your team can focus on what matters. From customer support to data processing, we build automation that feels magical.",
         whatWeBuild: [
-            "Customer support chatbots with context awareness",
+            "Customer support chatbots (Intercom, Web, WhatsApp)",
             "Email and document processing",
             "Data entry and validation",
             "Content generation and optimization",
             "Social media management",
             "Report generation",
-            "Lead qualification",
+            "Lead qualification & CRM sync",
             "Inventory and operations workflows"
         ],
         approach: [
@@ -169,7 +169,7 @@ const SERVICES_DATA: ServiceItem[] = [
             "Email marketing and automation",
             "Paid acquisition strategy (when appropriate)",
             "Product-led growth implementation",
-            "Analytics and attribution setup",
+            "Analytics (GA4) and attribution setup",
             "User onboarding optimization",
             "Retention and engagement campaigns"
         ],
@@ -187,6 +187,86 @@ const SERVICES_DATA: ServiceItem[] = [
     }
 ];
 
+const DATA_SERVICES: ServiceItem[] = [
+    {
+        title: "Power BI Dashboards",
+        headline: "Data-Driven Decisions, Visualized",
+        description: "Transform your raw data into interactive, visual insights. We build custom Power BI dashboards that help you track KPIs, identify trends, and make data-driven decisions.",
+        whatWeBuild: [
+            "Real-time data visualization",
+            "Custom KPI tracking",
+            "GA4 & CRM (Salesforce/HubSpot) integration",
+            "Automated reporting",
+            "Interactive drill-downs",
+            "Data modeling and transformation",
+            "Cross-platform integration"
+        ],
+        perfectFor: [
+            "Executive leadership teams",
+            "Data analysis departments",
+            "Sales and marketing performance tracking",
+            "Operational efficiency monitoring"
+        ],
+        roiFocus: "Reduce time spent on manual reporting by up to 90% while uncovering hidden revenue opportunities through better data visibility."
+    },
+    {
+        title: "Reporting Dashboards",
+        headline: "Automated Insights on Autopilot",
+        description: "Automated reporting solutions that save you time and reduce errors. We design comprehensive dashboards that consolidate data from multiple sources into clear, actionable reports.",
+        whatWeBuild: [
+            "Automated data aggregation pipelines",
+            "Custom PDF/Excel report generation",
+            "Multi-source data integration",
+            "Scheduled email delivery",
+            "Stakeholder-specific views",
+            "Historical trend analysis"
+        ],
+        whyItMatters: "Manual reporting is prone to errors and consumes valuable time. Automated dashboards ensure accuracy and free up your team for strategic work."
+    },
+    {
+        title: "Company Dashboards",
+        headline: "Your Business Pulse, Centralized",
+        description: "Centralize your company's metrics in one place. We create unified dashboards that provide a holistic view of your business performance across all departments, ensuring everyone is aligned.",
+        whatWeBuild: [
+            "Executive summary dashboards",
+            "Unified CRM & Sales dashboards",
+            "Departmental metric scorecards",
+            "Goal and OKR tracking",
+            "Real-time performance monitors",
+            "Employee productivity insights",
+            "Financial health overviews"
+        ],
+        growthPhilosophy: {
+            main: "Alignment drives growth.",
+            points: [
+                "Creating a single source of truth for all teams",
+                "Improving transparency and accountability",
+                "Speeding up decision-making loops",
+                "Identifying bottlenecks before they become crises"
+            ]
+        }
+    },
+    {
+        title: "Monitoring Integrations",
+        headline: "Proactive System Health & Alerts",
+        description: "Keep a pulse on your systems with robust monitoring integrations. We set up alerts and dashboards to ensure your critical infrastructure and applications are always running smoothly and issues are caught early.",
+        whatWeBuild: [
+            "System uptime and latency monitoring",
+            "CRM & Chatbot health checks",
+            "Real-time performance alerts (Slack/Email/SMS)",
+            "Log aggregation and analysis",
+            "Incident response workflow integration",
+            "Server resource tracking",
+            "API health checks"
+        ],
+        techStack: {
+            "Monitoring Tools": "Datadog, New Relic, Prometheus, Grafana",
+            "Alerting": "PagerDuty, OpsGenie, Slack",
+            "Cloud": "AWS CloudWatch, Azure Monitor, Google Cloud Operations"
+        }
+    }
+];
+
 export default function ServicesPage() {
     return (
         <div className="min-h-screen pt-16 pb-16 sm:pt-24 sm:pb-20">
@@ -197,8 +277,158 @@ export default function ServicesPage() {
             </div>
 
             <div className="px-4 max-w-7xl mx-auto space-y-16 sm:space-y-32 ">
-                {SERVICES_DATA.map((service, index) => (
+                {CORE_SERVICES.map((service, index) => (
                     <div key={index} id={service.title.toLowerCase().replace(/\s+/g, '-')} className="grid lg:grid-cols-2 gap-12 items-start scroll-mt-32 mb-10 sm:mb-20">
+                        {/* Left Column - Service Details */}
+                        <div>
+                            <h2 className="text-4xl font-black mb-2 text-gray-900">{service.title}</h2>
+                            <h3 className="text-2xl font-bold mb-6 text-accent">{service.headline}</h3>
+                            <p className="text-base text-gray-600 leading-relaxed mb-10">{service.description}</p>
+
+                            {service.process && (
+                                <div className="mb-10">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Our Process</h4>
+                                    <ul className="space-y-2.5">
+                                        {service.process.map((item, i) => (
+                                            <li key={i} className="text-sm text-gray-700 leading-relaxed">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {service.approach && (
+                                <div className="mb-10">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Our Approach</h4>
+                                    <ul className="space-y-2.5">
+                                        {service.approach.map((item, i) => (
+                                            <li key={i} className="text-sm text-gray-700 leading-relaxed">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {service.techStack && (
+                                <div className="mb-10">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Our Tech Stack</h4>
+                                    <div className="space-y-2">
+                                        {Object.entries(service.techStack).map(([key, value]) => (
+                                            <div key={key} className="text-sm">
+                                                <span className=" font-semibold">{key} :</span>
+                                                <span className="text-gray-700">{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {service.roiFocus && (
+                                <div className="mt-8 p-5 bg-gray-50 rounded-xl border border-gray-200">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-2">ROI Focus</h4>
+                                    <p className="text-sm text-gray-700 leading-relaxed">{service.roiFocus}</p>
+                                </div>
+                            )}
+
+                            {service.whyItMatters && (
+                                <div className="mt-8 p-5 bg-gray-50 rounded-xl border border-gray-200">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-2">Why It Matters</h4>
+                                    <p className="text-sm text-gray-700 leading-relaxed">{service.whyItMatters}</p>
+                                </div>
+                            )}
+
+                            {service.whoNeedsThis && (
+                                <div className="mt-8">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Who Needs This</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {service.whoNeedsThis.map((item, i) => (
+                                            <span key={i} className="bg-gray-100 px-3 py-1.5 rounded-lg text-xs font-medium text-gray-700">{item}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {service.growthPhilosophy && (
+                                <div className="mt-10">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-3">Growth Philosophy</h4>
+                                    <p className="mb-4 font-medium text-sm text-gray-900">{service.growthPhilosophy.main}</p>
+                                    <ul className="space-y-2">
+                                        {service.growthPhilosophy.points.map((p, i) => (
+                                            <li key={i} className="text-sm text-gray-600 leading-relaxed">
+                                                {p}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {service.timeline && (
+                                        <div className="mt-6 pt-4 border-t border-gray-200">
+                                            <span className="font-bold text-xs uppercase tracking-wider text-gray-500">Timeline Impact</span>
+                                            <p className="mt-2 text-sm text-gray-700">{service.timeline}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Right Column - Light Card */}
+                        <div className="bg-white border border-gray-200 shadow-xl text-gray-900 p-8 rounded-3xl sticky top-32">
+                            <h4 className="font-bold text-blue-600 uppercase tracking-wider text-xs mb-6">
+                                {service.whatWeBuild ? "What We Build" :
+                                    service.whatWeDeliver ? "What We Deliver" :
+                                        service.whatWeAutomate ? "What We Automate" :
+                                            service.whatWeCreate ? "What We Create" :
+                                                service.whatWeAnalyze ? "What We Analyze" : "What We Do"}
+                            </h4>
+                            <ul className="space-y-4">
+                                {(service.whatWeBuild || service.whatWeDeliver || service.whatWeAutomate || service.whatWeCreate || service.whatWeAnalyze || service.whatWeDo)?.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-gray-700 text-sm leading-relaxed">
+                                        <span className="flex-shrink-0 mt-1 text-blue-500">•</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {service.perfectFor && (
+                                <div className="mt-8 pt-8 border-t border-gray-100">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Perfect For</h4>
+                                    <ul className="space-y-2.5">
+                                        {service.perfectFor.map((item, i) => (
+                                            <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                                                <span className="flex-shrink-0 text-blue-500">•</span> {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {service.deliverables && (
+                                <div className="mt-8 pt-8 border-t border-gray-100">
+                                    <h4 className="font-bold text-black uppercase tracking-wider text-xs mb-4">Key Deliverables</h4>
+                                    <ul className="space-y-2.5">
+                                        {service.deliverables.map((item, i) => (
+                                            <li key={i} className="text-gray-600 text-sm flex items-start gap-2">
+                                                <span className="flex-shrink-0 text-blue-500">•</span> {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+
+                {/* Data & Intelligence Section Header */}
+                <div className="pt-20 pb-10 mb-10 text-center border-t border-gray-200">
+                    <span className="text-blue-600 font-bold tracking-wider uppercase text-sm border-2 border-blue-100 rounded-full px-4 py-1.5 bg-blue-50 mb-6 inline-block">Data & Operations</span>
+                    <h2 className="text-4xl md:text-5xl font-black text-black mb-6">Enterprise Intelligence & <span className="text-blue-600">Monitoring</span></h2>
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Data is your most valuable asset. We build the systems to visualize, report, and monitor your business in real-time.
+                    </p>
+                </div>
+
+                {DATA_SERVICES.map((service, index) => (
+                    <div key={`data-${index}`} id={service.title.toLowerCase().replace(/\s+/g, '-')} className="grid lg:grid-cols-2 gap-12 items-start scroll-mt-32 mb-10 sm:mb-20">
                         {/* Left Column - Service Details */}
                         <div>
                             <h2 className="text-4xl font-black mb-2 text-gray-900">{service.title}</h2>

@@ -297,23 +297,24 @@ export default function FAQPage() {
     })).filter(category => category.questions.length > 0);
 
     return (
-        <div className="min-h-screen bg-white pt-24 pb-20">
+
+        <div className="min-h-screen bg-white pt-10 pb-8">
             {/* Header Section */}
-            <div className="px-4 max-w-7xl mx-auto mb-16 text-center">
-                <span className="text-blue-600 font-bold tracking-wider uppercase text-sm border-2 border-blue-100 rounded-full px-4 py-1.5 bg-blue-50 mb-6 inline-block">
+            <div className="px-4 max-w-7xl mx-auto mb-6 text-center">
+                <span className="text-blue-600 font-bold tracking-wider uppercase text-sm border-2 border-blue-100 rounded-full px-4 py-1.5 bg-blue-50 mb-2 inline-block">
                     // frequently asked questions
                 </span>
-                <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6">FAQs</h1>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">FAQs</h1>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     Got questions? We have got answers. If you do not find what you are looking for, feel free to reach out.
                 </p>
 
                 {/* Search Bar */}
-                <div className="mt-10 max-w-xl mx-auto relative">
+                <div className="mt-6 max-w-xl mx-auto relative">
                     <input
                         type="text"
                         placeholder="Search for answers..."
-                        className="w-full pl-12 pr-4 py-4 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm text-gray-700"
+                        className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm text-gray-700"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -322,7 +323,7 @@ export default function FAQPage() {
             </div>
 
             {/* Questions Section */}
-            <div className="px-4 max-w-4xl mx-auto space-y-16">
+            <div className="px-4 max-w-4xl mx-auto space-y-6">
                 {filteredFAQs.map((category, catIndex) => (
                     <div key={catIndex}>
                         <div className="mb-6">
@@ -336,8 +337,8 @@ export default function FAQPage() {
                                     key={item.id}
                                     initial={false}
                                     className={`border rounded-2xl transition-all duration-300 overflow-hidden ${openItems[item.id]
-                                            ? 'border-blue-200 bg-blue-50/30'
-                                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                                        ? 'border-blue-200 bg-blue-50/30'
+                                        : 'border-gray-200 hover:border-gray-300 bg-white'
                                         }`}
                                 >
                                     <button
