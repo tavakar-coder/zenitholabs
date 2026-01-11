@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, Phone, Clock, MapPin, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, Phone, Clock, MapPin, ArrowRight, Loader2, MessageCircle } from 'lucide-react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { submitProjectForm } from '../actions';
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
                                         className="w-full bg-gray-50 border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all"
                                     >
                                         <option value="">What's this about?</option>
-                                        <option value="web-dev">Web Development</option>
+                                        <option value="web-dev">Custom AI Development</option>
                                         <option value="shopify">Shopify Development</option>
                                         <option value="ai-automation">AI Automation</option>
                                         <option value="documentation">Documentation</option>
@@ -131,6 +131,23 @@ export default function ContactPage() {
                     {/* Right Side - Contact Info */}
                     <div className="space-y-6">
 
+                        {/* WhatsApp Card */}
+                        <div className="bg-[#25D366] rounded-lg p-6 shadow-md text-white">
+                            <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                                <MessageCircle size={24} className="animate-pulse" />
+                                Chat on WhatsApp
+                            </h3>
+                            <p className="text-white/90 text-sm mb-4">Get instant answers to your questions. We're active right now!</p>
+                            <a
+                                href="https://wa.me/919680018108"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full bg-white text-[#25D366] text-center font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-sm"
+                            >
+                                Start Conversation
+                            </a>
+                        </div>
+
                         {/* Prefer a Direct Approach */}
                         <div className="bg-white rounded-lg p-8 shadow-sm">
                             <h3 className="text-lg font-bold text-gray-900 mb-6">Prefer a Direct Approach?</h3>
@@ -144,6 +161,8 @@ export default function ContactPage() {
                                         </a>
                                     </div>
                                 </div>
+
+
 
                                 <div className="flex items-start gap-3">
                                     <Mail size={20} className="text-blue-600 mt-0.5 flex-shrink-0" />

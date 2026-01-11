@@ -30,7 +30,7 @@ interface ServiceItem {
 
 const SERVICES_DATA: ServiceItem[] = [
     {
-        title: "Web Development",
+        title: "Custom AI Development",
         headline: "Build Fast. Scale Faster.",
         description: "Modern web applications that combine cutting-edge technology with timeless engineering principles. We use AI-assisted development to accelerate prototyping and traditional coding expertise to ensure production quality.",
         whatWeBuild: [

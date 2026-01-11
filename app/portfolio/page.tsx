@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function CaseStudiesPage() {
     const [filter, setFilter] = useState('All Projects');
 
-    const categories = ['All Projects', 'Web Development', 'Mobile App', 'Store', 'E-commerce', 'AI Automation', 'Fintech', 'SaaS', 'Blockchain'];
+    const categories = ['All Projects', 'Custom AI Development', 'Mobile App', 'Store', 'E-commerce', 'AI Automation', 'Fintech', 'SaaS', 'Blockchain'];
 
     const allProjects = [
         ...CASE_STUDIES.map(s => ({ ...s, isEcommerce: false })),

@@ -155,7 +155,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   className="w-full bg-gray-50 border border-gray-300 rounded-md px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all"
                 >
                   <option value="">What's this about?</option>
-                  <option value="web-dev">Web Development</option>
+                  <option value="web-dev">Custom AI Development</option>
                   <option value="shopify">Shopify Development</option>
                   <option value="ai-automation">AI Automation</option>
                   <option value="documentation">Documentation</option>
