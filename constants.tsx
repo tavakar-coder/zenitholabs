@@ -262,7 +262,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Real-time Updates",
       "Seamless Onboarding"
     ],
-    image: "https://picsum.photos/800/600?random=20",
+    image: "/assets/portfolio/liquidity_mobile.png",
     testimonial: "Liquidity.io isn't just a trading platform, it's a comprehensive solution designed to empower investors.",
     testimonialAuthor: "Product Team, Liquidity.io",
     overview: "Liquidity.io leverages blockchain technology to bring unprecedented liquidity to the alternative investment market. Our platform features a no-code API-minting solution, enabling users to swiftly digitize portfolios into tradeable securities. With a focus on security and transparency, Liquidity.io is reshaping how real-world assets are traded.",
@@ -483,7 +483,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Financial Tools",
       "User Centric"
     ],
-    image: "https://picsum.photos/800/600?random=5",
+    image: "/assets/portfolio/arthik_money.png",
     testimonial: "A seamless experience for our users. The platform is robust and secure.",
     testimonialAuthor: "CEO, Arthik.money",
     overview: "Arthik.money is an AI-powered personal expense and budget manager that auto-categorizes transactions, offers smart savings advice and an AI assistant chat for finance queries.",
@@ -527,7 +527,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Robust Admin Panel",
       "Clean UI/UX"
     ],
-    image: "https://picsum.photos/800/600?random=21",
+    image: "/assets/portfolio/decorating_varanasi.png",
     testimonial: "A comprehensive web application that streamlines the organization of events effectively.",
     testimonialAuthor: "Founder, The Decorating Varanasi",
     overview: "A dynamic Event Management website built and deployed in just 1 Day using AI. This comprehensive web application streamlines the organization of events through a dual-interface system, catering effectively to both administrators and end-users.",
@@ -571,7 +571,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Blockchain Ready",
       "Strategic Growth"
     ],
-    image: "https://picsum.photos/800/600?random=22",
+    image: "/assets/portfolio/nixet.png",
     testimonial: "We partner with businesses of all sizes to design, build, and scale digital products.",
     testimonialAuthor: "CEO, Nixet",
     overview: "Nixet partners with businesses of all sizes to design, build, and scale digital products. From early concepts to fully functional solutions, they offer services in Product Design, Web & App Development, Blockchain Integration, and DevOps, focusing on speed, efficiency, and practical execution.",
@@ -615,7 +615,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Global Reach",
       "Bespoke Customization Flow"
     ],
-    image: "https://picsum.photos/800/600?random=23",
+    image: "/assets/portfolio/vinayka_rugs.png",
     testimonial: "We weave stories into every knot, bringing the timeless art of handmade luxury to your modern home.",
     testimonialAuthor: "Vinayka Rugs Mission",
     overview: "Vinayka Rugs is a premium hand-knotted rug manufacturer based in Varanasi, India. Established in 1982, they blend 40+ years of heritage with contemporary design, working directly with 2,000+ artisans to create heirloom-quality art pieces.",
