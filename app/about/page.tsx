@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Target, Lightbulb, Handshake, Users } from 'lucide-react';
+import Team from '@/components/Team';
 
 const AboutPage = () => {
     return (
@@ -141,6 +142,8 @@ const AboutPage = () => {
                 </div>
             </section>
 
+            {/* Team Section */}
+            <Team />
 
         </div>
     );
