@@ -30,12 +30,6 @@ const Team: React.FC = () => {
             linkedin: "https://www.linkedin.com/in/chaurasiawadh/"
         },
         {
-            name: "Ravi",
-            role: "Senior Data Scientist",
-            experience: "12+",
-            image: "/team/ravi.png"
-        },
-        {
             name: "Pratham Srivastava",
             role: "AI Expert",
             experience: "4+",
@@ -48,6 +42,12 @@ const Team: React.FC = () => {
             experience: "5+",
             image: "/team/tanvi-gupta.png",
             linkedin: "https://www.linkedin.com/in/tanvi-gupta-44398a192/"
+        },
+        {
+            name: "Ravi",
+            role: "Senior Data Scientist",
+            experience: "12+",
+            image: "/team/ravi.png"
         }
     ];
 
@@ -122,7 +122,7 @@ const Team: React.FC = () => {
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors mt-2"
+                                        className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors mt-2 ml-4"
                                     >
                                         <Linkedin size={20} />
                                         <span className="text-sm font-medium">Connect</span>
