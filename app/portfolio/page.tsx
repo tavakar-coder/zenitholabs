@@ -31,7 +31,7 @@ export default function CaseStudiesPage() {
     ];
 
     const filteredStudies = filter === 'All Projects'
-        ? allProjects
+        ? allProjects.filter(study => !study.isEcommerce) // Exclude shop items from "All Projects"
         : allProjects.filter(study => {
             if (filter === 'Store') return study.isEcommerce;
             if (filter === 'E-commerce') return !study.isEcommerce && (
