@@ -124,12 +124,14 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center">
-            <button
-              onClick={onOpenContact}
-              className="bg-black hover:bg-gray-800 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+            <a
+              href="https://wa.me/919680018108"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
             >
-              Request For Quote
-            </button>
+              Connect on WhatsApp
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -204,15 +206,15 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
               {/* Mobile Drawer Footer / CTA */}
               <div className="mt-auto p-6 border-t border-gray-100">
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    onOpenContact?.();
-                  }}
-                  className="bg-black text-white w-full py-4 rounded-xl font-bold text-lg hover:bg-gray-800 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.1)] active:scale-[0.98]"
+                <a
+                  href="https://wa.me/919680018108"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="bg-[#25D366] text-white w-full py-4 rounded-xl font-bold text-lg hover:bg-[#20BA5A] transition-all shadow-[0_10px_30px_rgba(0,0,0,0.1)] active:scale-[0.98] block text-center"
                 >
-                  Request For Quote
-                </button>
+                  Connect on WhatsApp
+                </a>
               </div>
             </motion.div>
           </>
