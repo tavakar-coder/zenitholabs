@@ -42,8 +42,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl font-black text-black tracking-tighter leading-[1.1] mb-6 md:mb-8"
           >
-            Architecting Digital Excellence <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 pr-2 pb-2 box-decoration-clone leading-[1.2]">with AI-Driven Engineering</span>
+            Automate Your Operations <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 pr-2 pb-2 box-decoration-clone leading-[1.2]">with Intelligent AI Agents</span>
           </motion.h1>
 
           <motion.p
@@ -52,8 +52,26 @@ const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-500 mb-8 md:mb-10 max-w-3xl mx-auto leading-relaxed font-normal"
           >
-            Zenitho Labs is an elite agency specializing in AI automation, expert full-stack development, and strategic growth. We turn ambitious visions into high-performance, scalable digital products.
+            Scale your business without scaling headcount. We build autonomous workflows that save 20-40 hours/week and cut operational costs by 40%.
           </motion.p>
+
+          {/* Benefit Bullets */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="flex flex-wrap justify-center gap-4 mb-10 text-sm font-medium text-gray-600"
+          >
+            <span className="flex items-center gap-2 px-3 py-1 bg-purple-50 rounded-full border border-purple-100 text-purple-700">
+              🚀 Reduce tickets by 75%
+            </span>
+            <span className="flex items-center gap-2 px-3 py-1 bg-blue-50 rounded-full border border-blue-100 text-blue-700">
+              ⚡ 100% Automated Data Entry
+            </span>
+            <span className="flex items-center gap-2 px-3 py-1 bg-pink-50 rounded-full border border-pink-100 text-pink-700">
+              🤖 Orchestrate Complex Workflows
+            </span>
+          </motion.div>
 
 
           <motion.div

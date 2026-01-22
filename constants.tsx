@@ -38,161 +38,107 @@ export const PAIN_POINTS: PainPoint[] = [
   {
     id: 1,
     icon: MonitorX,
-    title: "Outdated Website Costing You Customers",
-    description: "Your website looks like it's from 2010, and potential customers are clicking away within seconds, losing you thousands in revenue."
+    title: "Drowning in Manual Work",
+    description: "Your operations team is stuck moving data between spreadsheets, CRMs, and support desks manually, wasting 20+ hours a week."
   },
   {
     id: 2,
-    icon: Clock,
-    title: "Wasting Hours on Repetitive Tasks",
-    description: "Your team spends 20+ hours per week on manual data entry, scheduling, and tasks that AI could handle in minutes."
+    icon: DollarSign,
+    title: "Scaling Costs are Exploding",
+    description: "You can't afford to hire 5 more support reps just to handle increased ticket volume. Headcount costs are eating your margins."
   },
   {
     id: 3,
-    icon: HelpCircle,
-    title: "Paying Too Much for Unclear Results",
-    description: "You've hired developers or agencies before, but got vague timelines, surprise costs, and websites that didn't move the needle."
+    icon: Clock,
+    title: "Slow Turnaround Times",
+    description: "Every manual ticket and data entry error bleeds efficiency. Customers wait days for answers that AI could provide in seconds."
   },
   {
     id: 4,
-    icon: Rocket,
-    title: "Missing Out on Modern Solutions",
-    description: "Your competitors are using AI automation and modern web tools to scale faster while you're stuck with outdated systems."
+    icon: UserCheck,
+    title: "Talent Burnout",
+    description: "Your best employees are stuck doing administrative busywork instead of the strategic problem-solving they were hired for."
   }
 ];
 
 export const SERVICES: Service[] = [
   {
     id: 1,
-    icon: Laptop,
-    title: "Custom AI Development",
-    description: "Modern, fast, and scalable web applications built with cutting-edge technology. We blend AI-assisted development with traditional coding excellence to deliver products that perform beautifully and scale effortlessly.",
+    icon: MessageSquare,
+    title: "Customer Support Automation",
+    description: "For CX Directors & Support Teams. We automate Tier-1 ticket triage, FAQ resolution, and order status inquiries. Reduce manual volume by 75% and deliver instant 24/7 responses.",
     features: [
-      "Custom platforms",
-      "SaaS products",
-      "Mobile apps (React Native - iOS & Android)",
-      "Progressive Web Apps (PWAs)",
-      "Enterprise dashboards",
-      "Complex web applications"
+      "Instant Triage",
+      "24/7 Resolution",
+      "CRM Sync",
+      "Multi-Channel"
     ],
-    ctaText: "Explore Custom AI"
+    ctaText: "Automate Support"
   },
   {
     id: 2,
-    icon: ShoppingBag,
-    title: "Shopify Development",
-    description: "Complete e-commerce solutions that convert visitors into customers. From stunning storefronts to custom integrations and automated workflows, we build Shopify stores that drive revenue.",
+    icon: Workflow,
+    title: "Workflow Orchestration",
+    description: "For COOs & VP Ops. We connect siloed tools (CRM, ERP, Slack) into one seamless flow. Automate multi-step operational processes like onboarding and approval chains.",
     features: [
-      "Online retailers",
-      "D2C brands",
-      "Physical product businesses",
-      "Custom themes & apps"
+      "End-to-End Flow",
+      "Tool Integration",
+      "Approval Loops",
+      "Error Handling"
     ],
-    ctaText: "Explore Shopify"
+    ctaText: "Orchestrate Ops"
   },
   {
     id: 3,
-    icon: BrainCircuit,
-    title: "AI Automation Agents",
-    description: "Intelligent automation that works while you sleep. We build custom AI agents that handle repetitive tasks, customer support, data processing, and complex workflows, giving you superhuman efficiency.",
+    icon: FileText,
+    title: "Data Extraction & Validation",
+    description: "For Data Ops & Finance. Eliminate human error and reduce processing time from days to seconds by automating OCR from invoices, contract analysis, and database entry.",
     features: [
-      "Task automation",
-      "Customer support bots",
-      "Data processing",
-      "Workflow optimization"
+      "OCR & Extraction",
+      "Auto-Validation",
+      "Database Entry",
+      "Zero Errors"
     ],
-    ctaText: "Explore AI Agents"
+    ctaText: "Process Data"
   },
   {
     id: 4,
-    icon: FileText,
-    title: "Product Documentation",
-    description: "Crystal-clear documentation that users actually read. We create comprehensive guides, API docs, knowledge bases, and technical content that empowers your users and reduces support tickets.",
+    icon: Target,
+    title: "Lead Qualification & Routing",
+    description: "For Sales Ops. We build agents that analyze inbound leads, enrich data, and route them to the right rep instantly. Achieve 3x faster speed-to-lead.",
     features: [
-      "SaaS products",
-      "API platforms",
-      "Internal tools",
-      "Developer guides"
+      "Instant Qualify",
+      "Data Enrichment",
+      "Smart Routing",
+      "Higher Conversion"
     ],
-    ctaText: "Explore Docs"
+    ctaText: "Qualify Leads"
   },
   {
     id: 5,
-    icon: TrendingUp,
-    title: "Product Profitability Analysis",
-    description: "Strategic insights that de-risk your product journey. Before you invest months and money, we analyze market fit, competitive landscape, monetization models, and growth potential.",
+    icon: Laptop,
+    title: "Custom AI Development",
+    description: "Need something unique? We build bespoke AI agents using LangChain and LangGraph that are tailored to your specific operational nuances and security requirements.",
     features: [
-      "Pre-launch analysis",
-      "Product pivots",
-      "Feature validation",
-      "Market entry strategy"
+      "LangChain",
+      "Private LLMs",
+      "Custom Logic",
+      "Enterprise Security"
     ],
-    ctaText: "Analyze Vision"
+    ctaText: "Build Custom AI"
   },
   {
     id: 6,
-    icon: Rocket,
-    title: "Product Growth & Marketing",
-    description: "Data-driven strategies that compound your growth. From SEO and content marketing to conversion optimization and user acquisition, we implement systems that consistently bring qualified customers.",
-    features: [
-      "Post-launch growth",
-      "User acquisition",
-      "Market expansion",
-      "Scaling strategies"
-    ],
-    ctaText: "Boost Growth"
-  },
-  {
-    id: 7,
     icon: BarChart,
-    title: "Power BI Dashboards",
-    description: "Transform your raw data into interactive, visual insights. We build custom Power BI dashboards that help you track KPIs, identify trends, and make data-driven decisions.",
+    title: "Power BI & Data Viz",
+    description: "Transform your raw data into interactive insights. We build custom Power BI dashboards that help you track KPIs, identify trends, and make data-driven decisions.",
     features: [
-      "Real-time data visualization",
-      "Custom KPI tracking",
-      "Automated reporting",
-      "Interactive drill-downs"
+      "Visual Insights",
+      "KPI Tracking",
+      "Real-time Data",
+      "Custom Reports"
     ],
     ctaText: "Visualize Data"
-  },
-  {
-    id: 8,
-    icon: LineChart,
-    title: "Reporting Dashboards",
-    description: "Automated reporting solutions that save you time. We design comprehensive dashboards that consolidate data from multiple sources into clear, actionable reports.",
-    features: [
-      "Automated data aggregation",
-      "Custom report generation",
-      "Multi-source integration",
-      "Scheduled delivery"
-    ],
-    ctaText: "Automate Reports"
-  },
-  {
-    id: 9,
-    icon: Layers,
-    title: "Company Dashboards",
-    description: "Centralize your company's metrics in one place. We create unified dashboards that provide a holistic view of your business performance across all departments.",
-    features: [
-      "Executive summaries",
-      "Departmental metrics",
-      "Goal tracking",
-      "Performance scorecards"
-    ],
-    ctaText: "Unify Metrics"
-  },
-  {
-    id: 10,
-    icon: MonitorX,
-    title: "Monitoring Integrations",
-    description: "Keep a pulse on your systems with robust monitoring integrations. We set up alerts and dashboards to ensure your critical infrastructure and applications are always running smoothly.",
-    features: [
-      "System uptime monitoring",
-      "Performance alerts",
-      "Log analysis",
-      "Incident response integration"
-    ],
-    ctaText: "Monitor Systems"
   }
 ];
 
