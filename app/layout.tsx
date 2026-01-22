@@ -22,7 +22,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.jpg',
+        url: '/opengraph-image.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'Zenitho Labs - AI Automation & Workflow Orchestration',
@@ -33,7 +33,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Automate Your Ops: AI Agents & Workflow Orchestration | Zenitho Labs',
     description: 'Stop hiring for repetitive tasks. Our AI agents automate 75% of support tickets and manual workflows. See how we save teams 20-40 hrs/week.',
-    images: ['/opengraph-image.jpg'],
+    images: ['/opengraph-image.jpg?v=2'],
   },
 };
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.jpg',
+        url: '/opengraph-image.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'Zenitho Labs AI Automation Services',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Zenitho Labs: AI Automation for Enterprise Operations',
     description: 'Scale your ops without scaling headcount. Custom LangChain agents for support & workflows.',
-    images: ['/opengraph-image.jpg'],
+    images: ['/opengraph-image.jpg?v=2'],
   },
 };
 
