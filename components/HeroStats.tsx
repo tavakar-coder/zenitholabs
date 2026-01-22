@@ -39,7 +39,7 @@ const HeroStats = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full max-w-7xl mx-auto px-4 mt-10 md:mt-16"
+            className="w-full max-w-7xl mx-auto px-4 mt-10 md:mt-8"
         >
             <div className="bg-white rounded-3xl xl:rounded-full shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 p-3 md:py-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-1 lg:gap-3 bg-white">
