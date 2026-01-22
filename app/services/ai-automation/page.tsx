@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-                url: '/assets/ai-automation-og.png',
+                url: '/opengraph-image.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'Zenitho Labs AI Automation Services',
