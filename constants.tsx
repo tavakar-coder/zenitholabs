@@ -77,29 +77,29 @@ export const SERVICES: Service[] = [
   },
   {
     id: 2,
-    icon: Workflow,
-    title: "Workflow Orchestration",
-    description: "For COOs & VP Ops. We connect siloed tools (CRM, ERP, Slack) into one seamless flow. Automate multi-step operational processes like onboarding and approval chains.",
+    icon: ShoppingBag,
+    title: "Shopify Development",
+    description: "Complete e-commerce solutions that convert visitors into customers. From stunning storefronts to custom integrations and automated workflows, we build Shopify stores that drive revenue.",
     features: [
-      "End-to-End Flow",
-      "Tool Integration",
-      "Approval Loops",
-      "Error Handling"
+      "Online retailers",
+      "D2C brands",
+      "Physical product businesses",
+      "Custom themes & apps"
     ],
-    ctaText: "Orchestrate Ops"
+    ctaText: "Explore Shopify"
   },
   {
     id: 3,
-    icon: FileText,
-    title: "Data Extraction & Validation",
-    description: "For Data Ops & Finance. Eliminate human error and reduce processing time from days to seconds by automating OCR from invoices, contract analysis, and database entry.",
+    icon: BrainCircuit,
+    title: "AI Automation Agents",
+    description: "Intelligent automation that works while you sleep. We build custom AI agents that handle repetitive tasks, customer support, data processing, and complex workflows, giving you superhuman efficiency.",
     features: [
-      "OCR & Extraction",
-      "Auto-Validation",
-      "Database Entry",
-      "Zero Errors"
+      "Task automation",
+      "Customer support bots",
+      "Data processing",
+      "Workflow optimization"
     ],
-    ctaText: "Process Data"
+    ctaText: "Explore AI Agents"
   },
   {
     id: 4,
@@ -116,19 +116,32 @@ export const SERVICES: Service[] = [
   },
   {
     id: 5,
-    icon: Laptop,
-    title: "Custom AI Development",
-    description: "Need something unique? We build bespoke AI agents using LangChain and LangGraph that are tailored to your specific operational nuances and security requirements.",
+    icon: TrendingUp,
+    title: "Product Profitability Analysis",
+    description: "Strategic insights that de-risk your product journey. Before you invest months and money, we analyze market fit, competitive landscape, monetization models, and growth potential.",
     features: [
-      "LangChain",
-      "Private LLMs",
-      "Custom Logic",
-      "Enterprise Security"
+      "Pre-launch analysis",
+      "Product pivots",
+      "Feature validation",
+      "Market entry strategy"
     ],
-    ctaText: "Build Custom AI"
+    ctaText: "Analyze Vision"
   },
   {
     id: 6,
+    icon: Rocket,
+    title: "Product Growth & Marketing",
+    description: "Data-driven strategies that compound your growth. From SEO and content marketing to conversion optimization and user acquisition, we implement systems that consistently bring qualified customers.",
+    features: [
+      "Post-launch growth",
+      "User acquisition",
+      "Market expansion",
+      "Scaling strategies"
+    ],
+    ctaText: "Boost Growth"
+  },
+  {
+    id: 7,
     icon: BarChart,
     title: "Power BI & Data Viz",
     description: "Transform your raw data into interactive insights. We build custom Power BI dashboards that help you track KPIs, identify trends, and make data-driven decisions.",
@@ -139,6 +152,45 @@ export const SERVICES: Service[] = [
       "Custom Reports"
     ],
     ctaText: "Visualize Data"
+  },
+  {
+    id: 8,
+    icon: LineChart,
+    title: "Reporting Dashboards",
+    description: "Automated reporting solutions that save you time. We design comprehensive dashboards that consolidate data from multiple sources into clear, actionable reports.",
+    features: [
+      "Automated data aggregation",
+      "Custom report generation",
+      "Multi-source integration",
+      "Scheduled delivery"
+    ],
+    ctaText: "Automate Reports"
+  },
+  {
+    id: 9,
+    icon: Layers,
+    title: "Company Dashboards",
+    description: "Centralize your company's metrics in one place. We create unified dashboards that provide a holistic view of your business performance across all departments.",
+    features: [
+      "Executive summaries",
+      "Departmental metrics",
+      "Goal tracking",
+      "Performance scorecards"
+    ],
+    ctaText: "Unify Metrics"
+  },
+  {
+    id: 10,
+    icon: MonitorX,
+    title: "Monitoring Integrations",
+    description: "Keep a pulse on your systems with robust monitoring integrations. We set up alerts and dashboards to ensure your critical infrastructure and applications are always running smoothly.",
+    features: [
+      "System uptime monitoring",
+      "Performance alerts",
+      "Log analysis",
+      "Incident response integration"
+    ],
+    ctaText: "Monitor Systems"
   }
 ];
 
