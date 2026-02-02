@@ -37,10 +37,15 @@ export const metadata = {
   },
 };
 
+import { getOrganizationSchema, JsonLdScript } from '@/lib/json-ld';
+
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        <JsonLdScript data={organizationSchema} id="organization-schema" />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-57DVX9V7"
@@ -80,3 +85,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+

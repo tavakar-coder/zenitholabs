@@ -33,6 +33,7 @@ import {
   Users
 } from 'lucide-react';
 import { PainPoint, Service, Step, CaseStudy, Differentiator, Testimonial, FAQItem } from './types';
+export type { FAQItem };
 
 export const PAIN_POINTS: PainPoint[] = [
   {

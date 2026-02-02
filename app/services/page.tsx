@@ -269,9 +269,21 @@ const DATA_SERVICES: ServiceItem[] = [
     }
 ];
 
+import { getServiceSchema, JsonLdScript } from '@/lib/json-ld';
+
 export default function ServicesPage() {
+    const allServices = [...CORE_SERVICES, ...DATA_SERVICES];
+
     return (
         <div className="min-h-screen pt-16 pb-16 sm:pt-24 sm:pb-20">
+            {allServices.map((service, index) => (
+                <JsonLdScript
+                    key={`schema-${index}`}
+                    data={getServiceSchema(service)}
+                    id={`service-schema-${index}`}
+                />
+            ))}
+
             <div className="px-4 max-w-7xl mx-auto mb-10 sm:mb-20 text-center">
                 <span className="text-blue-600 font-bold tracking-wider uppercase text-sm border-2 border-blue-100 rounded-full px-4 py-1.5 bg-blue-50 mb-6 inline-block">Our Expertise</span>
                 <h1 className="text-5xl md:text-7xl font-black text-black mb-6">Specialized Engineering for <span className="text-black">Modern Digital Growth</span>.</h1>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { getFAQSchema, JsonLdScript } from '@/lib/json-ld';
 import { ChevronDown, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -309,87 +310,94 @@ export default function FAQPage() {
             q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
             q.answer.toLowerCase().includes(searchQuery.toLowerCase())
         )
+
     })).filter(category => category.questions.length > 0);
 
+    const allQuestions = FAQ_DATA.flatMap(category => category.questions);
+    const faqSchema = getFAQSchema(allQuestions);
+
     return (
+        <>
+            <JsonLdScript data={faqSchema} id="faq-schema" />
+            <div className="min-h-screen bg-white pt-10 pb-8">
 
-        <div className="min-h-screen bg-white pt-10 pb-8">
-            {/* Header Section */}
-            <div className="px-4 max-w-7xl mx-auto mb-6 text-center">
-                <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">FAQs</h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Got questions? We have got answers. If you do not find what you are looking for, feel free to reach out.
-                </p>
+                {/* Header Section */}
+                <div className="px-4 max-w-7xl mx-auto mb-6 text-center">
+                    <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">FAQs</h1>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        Got questions? We have got answers. If you do not find what you are looking for, feel free to reach out.
+                    </p>
 
-                {/* Search Bar */}
-                <div className="mt-6 max-w-xl mx-auto relative">
-                    <input
-                        type="text"
-                        placeholder="Search for answers..."
-                        className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm text-gray-700"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    {/* Search Bar */}
+                    <div className="mt-6 max-w-xl mx-auto relative">
+                        <input
+                            type="text"
+                            placeholder="Search for answers..."
+                            className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm text-gray-700"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    </div>
+                </div>
+
+                {/* Questions Section */}
+                <div className="px-4 max-w-4xl mx-auto space-y-6">
+                    {filteredFAQs.map((category, catIndex) => (
+                        <div key={catIndex}>
+                            <div className="mb-6">
+                                <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
+                            </div>
+
+                            <div className="space-y-4">
+                                {category.questions.map((item) => (
+                                    <motion.div
+                                        key={item.id}
+                                        initial={false}
+                                        className={`border rounded-2xl transition-all duration-300 overflow-hidden ${openItems[item.id]
+                                            ? 'border-blue-200 bg-blue-50/30'
+                                            : 'border-gray-200 hover:border-gray-300 bg-white'
+                                            }`}
+                                    >
+                                        <button
+                                            onClick={() => toggleItem(item.id)}
+                                            className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                                        >
+                                            <span className={`text-lg font-medium pr-8 ${openItems[item.id] ? 'text-blue-600' : 'text-gray-800'}`}>
+                                                {item.question}
+                                            </span>
+                                            <div className={`flex-shrink-0 transition-transform duration-300 ${openItems[item.id] ? 'rotate-180' : ''}`}>
+                                                <ChevronDown className={`w-5 h-5 ${openItems[item.id] ? 'text-blue-600' : 'text-gray-400'}`} />
+                                            </div>
+                                        </button>
+
+                                        <AnimatePresence initial={false}>
+                                            {openItems[item.id] && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                >
+                                                    <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent">
+                                                        {item.answer}
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+
+                    {filteredFAQs.length === 0 && (
+                        <div className="text-center py-20 text-gray-500">
+                            No questions found matching your search.
+                        </div>
+                    )}
                 </div>
             </div>
-
-            {/* Questions Section */}
-            <div className="px-4 max-w-4xl mx-auto space-y-6">
-                {filteredFAQs.map((category, catIndex) => (
-                    <div key={catIndex}>
-                        <div className="mb-6">
-                            <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
-                        </div>
-
-                        <div className="space-y-4">
-                            {category.questions.map((item) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={false}
-                                    className={`border rounded-2xl transition-all duration-300 overflow-hidden ${openItems[item.id]
-                                        ? 'border-blue-200 bg-blue-50/30'
-                                        : 'border-gray-200 hover:border-gray-300 bg-white'
-                                        }`}
-                                >
-                                    <button
-                                        onClick={() => toggleItem(item.id)}
-                                        className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
-                                    >
-                                        <span className={`text-lg font-medium pr-8 ${openItems[item.id] ? 'text-blue-600' : 'text-gray-800'}`}>
-                                            {item.question}
-                                        </span>
-                                        <div className={`flex-shrink-0 transition-transform duration-300 ${openItems[item.id] ? 'rotate-180' : ''}`}>
-                                            <ChevronDown className={`w-5 h-5 ${openItems[item.id] ? 'text-blue-600' : 'text-gray-400'}`} />
-                                        </div>
-                                    </button>
-
-                                    <AnimatePresence initial={false}>
-                                        {openItems[item.id] && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                            >
-                                                <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent">
-                                                    {item.answer}
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-
-                {filteredFAQs.length === 0 && (
-                    <div className="text-center py-20 text-gray-500">
-                        No questions found matching your search.
-                    </div>
-                )}
-            </div>
-        </div>
+        </>
     );
 }
