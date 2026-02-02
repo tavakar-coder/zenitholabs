@@ -3,9 +3,21 @@
 import React from 'react';
 import { Construction } from 'lucide-react';
 
+import { getArticleSchema, JsonLdScript } from '@/lib/json-ld';
+
 export default function BlogsPage() {
+    const placeholderArticle = {
+        headline: 'Coming Soon: Comprehensive Guides on AI Automation',
+        description: 'We are writing comprehensive guides on product development, AI automation, and growth strategies. Stay tuned!',
+        image: ['https://zenitholabs.com/opengraph-image.jpg'],
+        author: 'Zenitho Labs Team',
+        datePublished: new Date().toISOString(),
+    };
+
     return (
         <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-20 min-h-screen">
+            <JsonLdScript data={getArticleSchema(placeholderArticle)} id="article-schema-placeholder" />
+
 
             <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-8">
                 <Construction size={48} className="text-gray-400" />

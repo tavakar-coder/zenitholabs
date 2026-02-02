@@ -269,19 +269,34 @@ const DATA_SERVICES: ServiceItem[] = [
     }
 ];
 
-import { getServiceSchema, JsonLdScript } from '@/lib/json-ld';
+import { getServiceSchema, getHowToSchema, JsonLdScript } from '@/lib/json-ld';
 
 export default function ServicesPage() {
     const allServices = [...CORE_SERVICES, ...DATA_SERVICES];
 
+    console.log('allServices', allServices);
+
+
     return (
         <div className="min-h-screen pt-16 pb-16 sm:pt-24 sm:pb-20">
             {allServices.map((service, index) => (
-                <JsonLdScript
-                    key={`schema-${index}`}
-                    data={getServiceSchema(service)}
-                    id={`service-schema-${index}`}
-                />
+                <React.Fragment key={`schema-group-${index}`}>
+                    <JsonLdScript
+                        data={getServiceSchema(service)}
+                        id={`service-schema-${index}`}
+                    />
+                    {service.process && (
+                        <JsonLdScript
+                            data={getHowToSchema({
+                                name: `How we implement ${service.title}`,
+                                description: service.description,
+                                steps: service.process.map(step => ({ name: step, text: step })),
+                                totalTime: service.timeline || "P1M"
+                            })}
+                            id={`howto-schema-${index}`}
+                        />
+                    )}
+                </React.Fragment>
             ))}
 
             <div className="px-4 max-w-7xl mx-auto mb-10 sm:mb-20 text-center">

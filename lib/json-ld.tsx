@@ -16,6 +16,7 @@ export type OrganizationSchema = {
         email?: string;
         areaServed?: string | string[];
         availableLanguage?: string | string[];
+        url?: string;
     }>;
     sameAs?: string[];
     address?: {
@@ -58,6 +59,66 @@ export type FAQPageSchema = {
             text: string;
         };
     }>;
+};
+
+export type HowToSchema = {
+    '@context': 'https://schema.org';
+    '@type': 'HowTo';
+    name: string;
+    description: string;
+    step: Array<{
+        '@type': 'HowToStep';
+        name: string;
+        text: string;
+        url?: string;
+    }>;
+    totalTime?: string;
+    tool?: Array<{
+        '@type': 'HowToTool';
+        name: string;
+    }>;
+};
+
+export type ReviewSchema = {
+    '@context': 'https://schema.org';
+    '@type': 'Review';
+    itemReviewed: {
+        '@type': 'Service' | 'Organization';
+        name: string;
+    };
+    reviewRating: {
+        '@type': 'Rating';
+        ratingValue: number;
+        bestRating: string;
+    };
+    author: {
+        '@type': 'Person' | 'Organization';
+        name: string;
+    };
+    reviewBody: string;
+};
+
+export type ArticleSchema = {
+    '@context': 'https://schema.org';
+    '@type': 'Article';
+    headline: string;
+    description: string;
+    image: string[];
+    author: {
+        '@type': 'Person' | 'Organization';
+        name: string;
+        url?: string;
+    };
+    publisher: {
+        '@type': 'Organization';
+        name: string;
+        logo: {
+            '@type': 'ImageObject';
+            url: string;
+        };
+    };
+    datePublished: string;
+    dateModified?: string;
 };
 
 const BASE_URL = 'https://zenitholabs.com';
@@ -124,6 +185,70 @@ export function getFAQSchema(faqs: FAQItem[]): FAQPageSchema {
                 text: faq.answer,
             },
         })),
+    };
+}
+
+export function getHowToSchema(data: { name: string; description: string; steps: { name: string; text: string }[]; totalTime?: string; tools?: string[] }): HowToSchema {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: data.name,
+        description: data.description,
+        step: data.steps.map((step) => ({
+            '@type': 'HowToStep',
+            name: step.name,
+            text: step.text,
+        })),
+        totalTime: data.totalTime,
+        tool: data.tools?.map(tool => ({
+            '@type': 'HowToTool',
+            name: tool
+        }))
+    };
+}
+
+export function getReviewSchema(review: { itemReviewed: string; rating: number; author: string; text: string }): ReviewSchema {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Review',
+        itemReviewed: {
+            '@type': 'Service',
+            name: review.itemReviewed,
+        },
+        reviewRating: {
+            '@type': 'Rating',
+            ratingValue: review.rating,
+            bestRating: '5',
+        },
+        author: {
+            '@type': 'Person',
+            name: review.author,
+        },
+        reviewBody: review.text,
+    };
+}
+
+export function getArticleSchema(article: { headline: string; description: string; image: string[]; author: string; datePublished: string; dateModified?: string }): ArticleSchema {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.headline,
+        description: article.description,
+        image: article.image,
+        author: {
+            '@type': 'Person',
+            name: article.author,
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: ORGANIZATION_NAME,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${BASE_URL}/icon.svg`,
+            },
+        },
+        datePublished: article.datePublished,
+        dateModified: article.dateModified,
     };
 }
 
